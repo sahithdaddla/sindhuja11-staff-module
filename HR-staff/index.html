@@ -1146,7 +1146,7 @@
             document.getElementById('addConfirmBtn').addEventListener('click', async function() {
                 if (pendingEmployee) {
                     try {
-                        const url = editingEmpId ? `http://localhost:3000/api/employees/${editingEmpId}` : 'http://localhost:3000/api/employees';
+                        const url = editingEmpId ? `http://16.171.151.154:3034/api/employees/${editingEmpId}` : 'http://16.171.151.154:3034/api/employees';
                         const method = editingEmpId ? 'PUT' : 'POST';
                         
                         const response = await fetch(url, {
@@ -1231,7 +1231,7 @@
             // Fetch employees
             async function fetchEmployees(searchTerm = '') {
                 try {
-                    const url = searchTerm ? `http://localhost:3000/api/employees?search=${encodeURIComponent(searchTerm)}` : 'http://localhost:3000/api/employees';
+                    const url = searchTerm ? `http://16.171.151.154:3034/api/employees?search=${encodeURIComponent(searchTerm)}` : 'http://16.171.151.154:3034/api/employees';
                     const response = await fetch(url);
                     const employees = await response.json();
                     
@@ -1275,7 +1275,7 @@
             // View details function
             window.viewDetails = async function(empId) {
                 try {
-                    const response = await fetch(`http://localhost:3000/api/employees/${empId}`);
+                    const response = await fetch(`http://16.171.151.154:3034/api/employees/${empId}`);
                     const employee = await response.json();
                     
                     if (!response.ok) {
@@ -1336,7 +1336,7 @@
             document.getElementById('deleteConfirmBtn').addEventListener('click', async function() {
                 const empId = deleteConfirmationModal.dataset.empId;
                 try {
-                    const response = await fetch(`http://localhost:3000/api/employees/${empId}`, {
+                    const response = await fetch(`http://16.171.151.154:3034/api/employees/${empId}`, {
                         method: 'DELETE'
                     });
                     const result = await response.json();

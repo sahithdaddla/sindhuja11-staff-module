@@ -2,7 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3034;
 
 // Middleware
 app.use(cors());
@@ -11,9 +11,9 @@ app.use(express.json());
 // PostgreSQL connection configuration
 const pool = new Pool({
     user: 'postgres', // Replace with your PostgreSQL username
-    host: 'localhost',
+    host: 'postgres',
     database: 'staff_management',
-    password: 'root', // Replace with your PostgreSQL password
+    password: 'admin123', // Replace with your PostgreSQL password
     port: 5432,
 });
 
