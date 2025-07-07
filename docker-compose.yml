@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: admin123
       POSTGRES_DB: staff_management
     ports:
-      - "5465:5432"
+      - "5205:5432"
     volumes:
       - pgdata_staff:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql 
@@ -24,7 +24,7 @@ services:
     container_name: staff-backend
     restart: unless-stopped
     environment:
-      PORT: 3034
+      PORT: 3205
       DB_USER: postgres
       DB_PASSWORD: admin123
       DB_NAME: staff_management
@@ -33,7 +33,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "3034:3034"
+      - "3205:3205"
     networks: [staff-net]
 
   # ---------------- HR-Staff UI ----------------
@@ -45,7 +45,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "8178:80"   # hostPort:containerPort
+      - "8010:80"   # hostPort:containerPort
     networks: [staff-net]
 
 networks:
