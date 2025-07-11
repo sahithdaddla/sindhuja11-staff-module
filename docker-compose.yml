@@ -4,7 +4,7 @@ services:
   # ---------------- Database ----------------
   postgres:
     image: postgres:13
-    container_name: staff-postgres
+    container_name: staff1-postgres
     restart: always
     environment:
       POSTGRES_USER: postgres
