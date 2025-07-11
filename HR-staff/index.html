@@ -1146,7 +1146,11 @@
             document.getElementById('addConfirmBtn').addEventListener('click', async function() {
                 if (pendingEmployee) {
                     try {
+<<<<<<< HEAD
                         const url = editingEmpId ? `http://13.60.174.27:3205/api/employees/${editingEmpId}` : 'http://13.60.174.27:3205/api/employees';
+=======
+                        const url = editingEmpId ? `http://3.85.61.23:3205/api/employees/${editingEmpId}` : 'http://3.85.61.23:3205/api/employees';
+>>>>>>> fda914162a3aa673dd50ab09e378fe36ee37e1c0
                         const method = editingEmpId ? 'PUT' : 'POST';
                         
                         const response = await fetch(url, {
@@ -1231,7 +1235,11 @@
             // Fetch employees
             async function fetchEmployees(searchTerm = '') {
                 try {
+<<<<<<< HEAD
                     const url = searchTerm ? `http://13.60.174.27:3205/api/employees?search=${encodeURIComponent(searchTerm)}` : 'http://13.60.174.27:3205/api/employees';
+=======
+                    const url = searchTerm ? `http://3.85.61.23:3205/api/employees?search=${encodeURIComponent(searchTerm)}` : 'http://3.85.61.23:3205/api/employees';
+>>>>>>> fda914162a3aa673dd50ab09e378fe36ee37e1c0
                     const response = await fetch(url);
                     const employees = await response.json();
                     
@@ -1275,7 +1283,11 @@
             // View details function
             window.viewDetails = async function(empId) {
                 try {
+<<<<<<< HEAD
                     const response = await fetch(`http://13.60.174.27:3205/api/employees/${empId}`);
+=======
+                    const response = await fetch(`http://3.85.61.23:3205/api/employees/${empId}`);
+>>>>>>> fda914162a3aa673dd50ab09e378fe36ee37e1c0
                     const employee = await response.json();
                     
                     if (!response.ok) {
@@ -1336,7 +1348,11 @@
             document.getElementById('deleteConfirmBtn').addEventListener('click', async function() {
                 const empId = deleteConfirmationModal.dataset.empId;
                 try {
+<<<<<<< HEAD
                     const response = await fetch(`http://13.60.174.27:3205/api/employees/${empId}`, {
+=======
+                    const response = await fetch(`http://3.85.61.23:3205/api/employees/${empId}`, {
+>>>>>>> fda914162a3aa673dd50ab09e378fe36ee37e1c0
                         method: 'DELETE'
                     });
                     const result = await response.json();
